@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.kihron.serverrpexposer.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "ZipResourcePackInvoker"
+  ],
+  "client": [
+    "ClientBuiltinResourcePackProviderMixin",
+    "ClientPlayNetworkHandlerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

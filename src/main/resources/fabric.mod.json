@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "serverrpexposer",
+  "version": "${version}",
+  "name": "ServerRPExposer",
+  "description": "Extracts server resource packs when they are sent to the client.",
+  "authors": ["Kihron", "Slackow"],
+  "contact": {},
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.kihron.serverrpexposer.client.ServerRPExposerClient"
+    ],
+    "main": [
+      "com.kihron.serverrpexposer.ServerRPExposer"
+    ]
+  },
+  "mixins": [
+    "ServerRPExposer.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.14",
+    "minecraft": "1.19.2"
+  }
+}
