@@ -9,5 +9,5 @@ import java.util.zip.ZipFile;
 @Mixin(net.minecraft.resource.ZipResourcePack.class)
 public interface ZipResourcePackInvoker {
     @Invoker("getZipFile")
-    ZipFile getZipFile() throws IOException;
+    ZipFile getTheZipFile() throws IOException;
 }

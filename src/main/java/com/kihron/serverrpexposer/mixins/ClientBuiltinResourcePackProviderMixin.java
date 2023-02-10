@@ -24,7 +24,7 @@ public class ClientBuiltinResourcePackProviderMixin {
     public void loadServerPack(File file, ResourcePackSource packSource, CallbackInfoReturnable<CompletableFuture<Void>> cir) {
         try (ZipResourcePack zipResourcePack = new ZipResourcePack(file)) {
             //noinspection DataFlowIssue
-            ZipFile zipFile = ((ZipResourcePackInvoker) zipResourcePack).getZipFile();
+            ZipFile zipFile = ((ZipResourcePackInvoker) zipResourcePack).getTheZipFile();
             try {
                 Path path = MinecraftClient.getInstance().runDirectory.toPath().resolve("serverrp_exposer");
                 Files.createDirectories(path);
