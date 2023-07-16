@@ -2,6 +2,7 @@ package com.kihron.serverrpexposer.mixins;
 
 import com.kihron.serverrpexposer.ServerRPExposer;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.resource.ServerResourcePackProvider;
 import net.minecraft.resource.ResourcePackSource;
 import net.minecraft.resource.ZipResourcePack;
 import org.spongepowered.asm.mixin.Mixin;
@@ -17,12 +18,12 @@ import java.util.concurrent.CompletableFuture;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-@Mixin(net.minecraft.client.resource.ClientBuiltinResourcePackProvider.class)
-public class ClientBuiltinResourcePackProviderMixin {
+@Mixin(ServerResourcePackProvider.class)
+public class ServerResourcePackProviderMixin {
     @SuppressWarnings("ResultOfMethodCallIgnored")
     @Inject(at = @At("TAIL"), method = "loadServerPack(Ljava/io/File;Lnet/minecraft/resource/ResourcePackSource;)Ljava/util/concurrent/CompletableFuture;")
     public void loadServerPack(File file, ResourcePackSource packSource, CallbackInfoReturnable<CompletableFuture<Void>> cir) {
-        try (ZipResourcePack zipResourcePack = new ZipResourcePack(file)) {
+        try (ZipResourcePack zipResourcePack = new ZipResourcePack("lmao", file, false)) {
             //noinspection DataFlowIssue
             ZipFile zipFile = ((ZipResourcePackInvoker) zipResourcePack).getTheZipFile();
             try {

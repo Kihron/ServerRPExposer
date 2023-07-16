@@ -4,14 +4,17 @@
   "version": "${version}",
   "name": "ServerRPExposer",
   "description": "Extracts server resource packs when they are sent to the client.",
-  "authors": ["Kihron", "Slackow"],
-  "contact": {},
+  "authors": [
+    "Kihron",
+    "Slackow"
+  ],
+  "contact": {
+    "sources": "https://github.com/Kihron/ServerRPExposer",
+    "homepage": "https://modrinth.com/mod/serverrpexposer"
+  },
   "license": "MIT",
   "environment": "*",
   "entrypoints": {
-    "client": [
-      "com.kihron.serverrpexposer.client.ServerRPExposerClient"
-    ],
     "main": [
       "com.kihron.serverrpexposer.ServerRPExposer"
     ]
@@ -21,6 +24,6 @@
   ],
   "depends": {
     "fabricloader": ">=0.14.7",
-    "minecraft": "1.19.*"
+    "minecraft": "1.20.*"
   }
 }

@@ -7,7 +7,7 @@
     "ZipResourcePackInvoker"
   ],
   "client": [
-    "ClientBuiltinResourcePackProviderMixin",
+    "ServerResourcePackProviderMixin",
     "ClientPlayNetworkHandlerMixin"
   ],
   "injectors": {
