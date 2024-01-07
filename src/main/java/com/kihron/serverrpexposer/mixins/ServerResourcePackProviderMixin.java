@@ -42,6 +42,7 @@ public class ServerResourcePackProviderMixin {
                 while (entries.hasMoreElements()) {
                     ZipEntry entry = entries.nextElement();
                     File entryDestination = path.resolve(entry.getName()).toFile();
+                    if (!entryDestination.getCanonicalPath().startsWith(path.toRealPath() + "/")) continue;
                     if (entry.isDirectory()) {
                         entryDestination.mkdirs();
                     } else {
